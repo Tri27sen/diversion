@@ -60,9 +60,29 @@
         </div>
         <div class="right_side">
             <nav>
-                <ul>
+                <ul><script>
+                    
+                    </script>
                     <li>Home<span></span></li>
-                    <li><a href="./todolog.html">To-Do List</a></li>
+                    <li><a id="todoLink" href="#">To-Do List</a>
+
+                        <script>
+                        document.addEventListener("DOMContentLoaded", function() {
+                            // Get the username from the URL
+                            const queryString = window.location.search;
+                            const urlParams = new URLSearchParams(queryString);
+                            const username = urlParams.get('username');
+                        
+                            // Construct the To-Do List link with the username
+                            const todoLink = document.getElementById('todoLink');
+                            if (username) {
+                                todoLink.href = `./todolog.html?username=${username}`;
+                            } else {
+                                // Handle the case where the username is not provided in the URL
+                                todoLink.href = './todolog.html'; // Or set it to a default value
+                            }
+                        });
+                        </script></li>
                     <li><a href="./about.html">About Us</a></li>
                     <li><a href="./contact.html">Contact us</a></li>
                 </ul>
