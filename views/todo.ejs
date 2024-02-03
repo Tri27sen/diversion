@@ -1,0 +1,29 @@
+<!-- views/todos.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todos</title>
+</head>
+<body>
+  <h1>Welcome <%= user.username %>!</h1>
+
+  <h2>Your Todos:</h2>
+  <ul>
+    <% todos.forEach(todo => { %>
+      <li><%= todo.name %></li>
+    <% }); %>
+  </ul>
+
+  <!-- Add a form to add new todos -->
+  <form action="/add-todo" method="POST">
+    <label for="todo">Add Todo:</label>
+    <input type="text" id="todo" name="todo" required>
+    <button type="submit">Add</button>
+  </form>
+
+  <a href="/logout">Logout</a>
+</body>
+</html>

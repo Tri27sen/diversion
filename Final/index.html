@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="./public/favicon.png" type="image/png">
+    <title>TECHY</title>
+</head>
+
+<body>
+    <header>
+        <div class="left_side">
+            <img id="logo" src="./public/logo_cropped.png" alt="Techy Logo">
+            <div class="stack">
+                <li class="stackItem">
+                    <label for="HTML">
+                        <span>01</span>
+                        <img src="./tech_logos/html.svg" alt="HTML Logo">
+                        <h3>HTML</h3>
+                    </label>
+                    <input type="checkbox" class="requirementCheckbox" id="HTML" value="HTML">
+                </li>
+                <li class="stackItem">
+                    <label for="CSS">
+                        <span>02</span>
+                        <img src="./tech_logos/css.svg" alt="CSS Logo">
+                        <h3>CSS</h3>
+                    </label>
+                    <input type="checkbox" class="requirementCheckbox" id="CSS" value="CSS">
+                </li>
+                <li class="stackItem">
+                    <label for="JavaScript">
+                        <span>03</span>
+                        <img src="./tech_logos/js.svg" alt="JS Logo">
+                        <h3>JavaScript</h3>
+                    </label>
+                    <input type="checkbox" class="requirementCheckbox" id="JavaScript" value="JavaScript">
+                </li>
+
+                <li class="stackItem">
+                    <label for="Python">
+                        <span>04</span>
+                        <img src="./tech_logos/python.svg" alt="Python Logo">
+                        <h3>Python</h3>
+                    </label>
+                    <input type="checkbox" class="requirementCheckbox" id="Python" value="Python">
+                </li>
+                <li class="stackItem">
+                    <label for="MongoDB">
+                        <span>05</span>
+                        <img src="./tech_logos/mongodb.svg" alt="MongoDB Logo">
+                        <h3>MongoDB</h3>
+                    </label>
+                    <input type="checkbox" class="requirementCheckbox" id="MongoDB" value="MongoDB">
+                </li>
+            </div>
+        </div>
+        <div class="right_side">
+            <nav>
+                <ul>
+                    <li>Home<span></span></li>
+                    <li><a href="./todo.html">To-Do List</a></li>
+                    <li><a href="./about.html">About Us</a></li>
+                    <li><a href="./contact.html">Contact us</a></li>
+                </ul>
+                <div class="search">
+                    <i class="bi bi-search"></i>
+                    <input type="text" placeholder="Search Projects">
+                </div>
+                <button class="button-63" role="button">Log In</button>
+            </nav>
+            <!-- Body will start from here -->
+            <div id="projectsContainer">
+                <div class="card">
+                    <div class="difficulty">Beginner</div>
+                    <div class="name">Portfolio Website</div>
+                    <p>Build a personal branding and attract more job opportunities.</p>
+                    <h3>Prerequisites</h3>
+                    <ul class="require">
+                        <li>✅ HTML</li>
+                        <li>✅ CSS</li>
+                    </ul>
+                    <button class="link"><a
+                            href="https://github.com/bedimcode/responsive-portfolio-website-patrick"
+                            target="_blank">Link</a></button>
+                    <button class="todo"><a>Add to To-Do List</a></button>
+                </div>
+                <!-- This card part here is only written for familiarisation with Code Structure, it is rendered dynamically. -->
+            </div>
+            <div id="pagination">
+                <button class="button-63" id="prevPageButton">Previous Page</button>
+                <button class="button-63" id="nextPageButton">Next Page</button>
+            </div>
+            <video id="vid" width="1120" height="630" autoplay loop muted>
+                <source src="./public/home.mp4" type="video/mp4">
+            </video>
+    </header>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

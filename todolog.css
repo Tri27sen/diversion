@@ -1,0 +1,25 @@
+body {
+  background-color: #0b1320; /* Set the background color of the entire webpage to dark blue */
+  color: aqua;
+}
+
+.card {
+  margin-bottom: 20px;
+  background: #0b1320;
+  border: 2px solid aqua;
+  color: white;
+  border-radius: 15px;
+  padding-top: 13px;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
