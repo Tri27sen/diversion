@@ -1,19 +1,3 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 import express from 'express';
 import mongoose from 'mongoose';
 import passport from 'passport';
@@ -33,12 +17,12 @@ import dbConnect from './db/dbconnect.mjs';
 // Connect to MongoDB (you need to have MongoDB running)
 // Set up middleware
 dbConnect();
-const corsOptions = {
-  origin: 'http://127.0.0.1:5500',
-  credentials: true,
-};
+// const corsOptions = {
+//   origin: 'http://127.0.0.1:5500',
+//   credentials: true,
+// };
 
-app.use(cors(corsOptions));
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(session({

@@ -9,15 +9,71 @@
     <link rel="icon" href="./public/favicon.png" type="image/png">
     <title>TECHY</title>
 </head>
+<style>
+    /* Add this style block for custom styling */
+    nav {
+        display: flex;
+        align-items: center;
+    }
+
+    .dropdown {
+        position: relative;
+        display: inline-block;
+        margin-right: 20px;
+        /* Adjust spacing between Quiz and About Us */
+    }
+
+    .dropbtn {
+        background-color: #5372F0;
+        color: white;
+        padding: 5px 5px;
+        /* Adjust padding for a smaller size */
+        font-size: 14px;
+        /* Adjust font size for a smaller size */
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        border-radius: 5px;
+        padding: 8px 0;
+        /* Adjust padding for a classic look */
+    }
+
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        border-bottom: 1px solid #ddd;
+        /* Add a border between items */
+    }
+
+    .dropdown-content a:last-child {
+        border-bottom: none;
+        /* Remove border for the last item */
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+</style>
 
 <body>
     <header>
         <div class="left_side">
             <img id="logo" src="./public/logo_cropped.png" alt="Techy Logo">
+            <h1>Select your Tech Stack :</h1>
             <div class="stack">
                 <li class="stackItem">
                     <label for="HTML">
-                        <span>01</span>
                         <img src="./tech_logos/html.svg" alt="HTML Logo">
                         <h3>HTML</h3>
                     </label>
@@ -25,7 +81,6 @@
                 </li>
                 <li class="stackItem">
                     <label for="CSS">
-                        <span>02</span>
                         <img src="./tech_logos/css.svg" alt="CSS Logo">
                         <h3>CSS</h3>
                     </label>
@@ -33,16 +88,13 @@
                 </li>
                 <li class="stackItem">
                     <label for="JavaScript">
-                        <span>03</span>
                         <img src="./tech_logos/js.svg" alt="JS Logo">
                         <h3>JavaScript</h3>
                     </label>
                     <input type="checkbox" class="requirementCheckbox" id="JavaScript" value="JavaScript">
                 </li>
-
                 <li class="stackItem">
                     <label for="Python">
-                        <span>04</span>
                         <img src="./tech_logos/python.svg" alt="Python Logo">
                         <h3>Python</h3>
                     </label>
@@ -50,52 +102,110 @@
                 </li>
                 <li class="stackItem">
                     <label for="MongoDB">
-                        <span>05</span>
                         <img src="./tech_logos/mongodb.svg" alt="MongoDB Logo">
                         <h3>MongoDB</h3>
                     </label>
                     <input type="checkbox" class="requirementCheckbox" id="MongoDB" value="MongoDB">
                 </li>
+                <li class="stackItem">
+                    <label for="React">
+                        <img src="./tech_logos/react.svg" alt="React Logo">
+                        <h3>React</h3>
+                    </label>
+                    <input type="checkbox" class="requirementCheckbox" id="React" value="React">
+                </li>
+                <li class="stackItem">
+                    <label for="NodeJS">
+                        <img src="./tech_logos/nodejs.svg" alt="NodeJS Logo">
+                        <h3>NodeJS</h3>
+                    </label>
+                    <input type="checkbox" class="requirementCheckbox" id="NodeJS" value="NodeJS">
+                </li>
+                <li class="stackItem">
+                    <label for="Jenkins">
+                        <img src="./tech_logos/jenkins.svg" alt="Jenkins Logo">
+                        <h3>Jenkins</h3>
+                    </label>
+                    <input type="checkbox" class="requirementCheckbox" id="Jenkins" value="Jenkins">
+                </li>
+                <li class="stackItem">
+                    <label for="Docker">
+                        <img src="./tech_logos/docker.svg" alt="Docker Logo">
+                        <h3>Docker</h3>
+                    </label>
+                    <input type="checkbox" class="requirementCheckbox" id="Docker" value="Docker">
+                </li>
+                <li class="stackItem">
+                    <label for="Kubernetes">
+                        <img src="./tech_logos/kubernetes.svg" alt="Kubernetes Logo">
+                        <h3>Kubernetes</h3>
+                    </label>
+                    <input type="checkbox" class="requirementCheckbox" id="Kubernetes" value="Kubernetes">
+                </li>
+                <li class="stackItem">
+                    <label for="MachineLearning">
+                        <img src="./tech_logos/ml.svg" alt="MachineLearning Logo">
+                        <h3>Machine Learning</h3>
+                    </label>
+                    <input type="checkbox" class="requirementCheckbox" id="MachineLearning" value="MachineLearning">
+                </li>
+                <li class="stackItem">
+                    <label for="Rust">
+                        <img src="./tech_logos/rust.svg" alt="Rust Logo">
+                        <h3>Rust</h3>
+                    </label>
+                    <input type="checkbox" class="requirementCheckbox" id="Rust" value="Rust">
+                </li>
             </div>
         </div>
         <div class="right_side">
             <nav>
-                <ul><script>
-                    
+                <ul>
+                    <script>
+
                     </script>
                     <li>Home<span></span></li>
                     <li><a id="todoLink" href="#">To-Do List</a>
 
                         <script>
-                        document.addEventListener("DOMContentLoaded", function() {
-                            // Get the username from the URL
-                            const queryString = window.location.search;
-                            const urlParams = new URLSearchParams(queryString);
-                            const username = urlParams.get('username');
-                        
-                            // Construct the To-Do List link with the username
-                            const todoLink = document.getElementById('todoLink');
-                            if (username) {
-                                todoLink.href = `./todolog.html?username=${username}`;
-                            } else {
-                                // Handle the case where the username is not provided in the URL
-                                todoLink.href = './todolog.html'; // Or set it to a default value
-                            }
-                        });
-                        </script></li>
+                            document.addEventListener("DOMContentLoaded", function () {
+                                // Get the username from the URL
+                                const queryString = window.location.search;
+                                const urlParams = new URLSearchParams(queryString);
+                                const username = urlParams.get('username');
+
+                                // Construct the To-Do List link with the username
+                                const todoLink = document.getElementById('todoLink');
+                                if (username) {
+                                    todoLink.href = `./todolog.html?username=${username}`;
+                                } else {
+                                    // Handle the case where the username is not provided in the URL
+                                    todoLink.href = './todolog.html'; // Or set it to a default value
+                                }
+                            });
+                        </script>
+                    </li>
+                    <div class="dropdown">
+                        <button class="dropbtn">Quiz <i class="bi bi-caret-down"></i></button>
+                        <div class="dropdown-content">
+                            <a href="./frontend/frontend.html">Frontend</a>
+                            <a href="./backend/backend.html">Backend</a>
+                            <a href="./devops/devops.html">DevOps</a>
+                        </div>
+                    </div>
                     <li><a href="./about.html">About Us</a></li>
                     <li><a href="./contact.html">Contact us</a></li>
                 </ul>
-                <div class="search">
+                <!-- <div class="search">
                     <i class="bi bi-search"></i>
                     <input type="text" placeholder="Search Projects">
-                </div>
+                </div> -->
                 <a class="button-63" href="./login.html" role="button">Log In</a>
 
             </nav>
             <!-- Body will start from here -->
             <div id="projectsContainer">
-                <div class="card">
+                <!-- <div class="card">
                     <div class="difficulty">Beginner</div>
                     <div class="name">Portfolio Website</div>
                     <p>Build a personal branding and attract more job opportunities.</p>
@@ -110,7 +220,7 @@
                             <button class="todo" id="add_to_do_list"><a>Add to To-Do List</a></button>
                             <input type="checkbox" class="form-check-input"id="addToDoCheckbox">
 
-                </div>
+                </div> -->
                 <!-- This card part here is only written for familiarisation with Code Structure, it is rendered dynamically. -->
             </div>
             <div id="pagination">
@@ -118,7 +228,7 @@
                 <button class="button-63" id="nextPageButton">Next Page</button>
             </div>
             <video id="vid" width="1120" height="630" autoplay loop muted>
-                <source src="./home.mp4" type="video/mp4">
+                <source src="./public/home.mp4" type="video/mp4">
             </video>
     </header>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
