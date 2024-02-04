@@ -9,6 +9,62 @@
     <link rel="icon" href="./public/favicon.png" type="image/png">
     <title>TECHY</title>
 </head>
+<style>
+    /* Add this style block for custom styling */
+    nav {
+        display: flex;
+        align-items: center;
+    }
+
+    .dropdown {
+        position: relative;
+        display: inline-block;
+        margin-right: 20px;
+        /* Adjust spacing between Quiz and About Us */
+    }
+
+    .dropbtn {
+        background-color: #5372F0;
+        color: white;
+        padding: 5px 5px;
+        /* Adjust padding for a smaller size */
+        font-size: 14px;
+        /* Adjust font size for a smaller size */
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        border-radius: 5px;
+        padding: 8px 0;
+        /* Adjust padding for a classic look */
+    }
+
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        border-bottom: 1px solid #ddd;
+        /* Add a border between items */
+    }
+
+    .dropdown-content a:last-child {
+        border-bottom: none;
+        /* Remove border for the last item */
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+</style>
 
 <body>
     <header>
@@ -104,36 +160,46 @@
         </div>
         <div class="right_side">
             <nav>
-                <ul><script>
-                    
+                <ul>
+                    <script>
+
                     </script>
                     <li>Home<span></span></li>
                     <li><a id="todoLink" href="#">To-Do List</a>
 
                         <script>
-                        document.addEventListener("DOMContentLoaded", function() {
-                            // Get the username from the URL
-                            const queryString = window.location.search;
-                            const urlParams = new URLSearchParams(queryString);
-                            const username = urlParams.get('username');
-                        
-                            // Construct the To-Do List link with the username
-                            const todoLink = document.getElementById('todoLink');
-                            if (username) {
-                                todoLink.href = `./todolog.html?username=${username}`;
-                            } else {
-                                // Handle the case where the username is not provided in the URL
-                                todoLink.href = './todolog.html'; // Or set it to a default value
-                            }
-                        });
-                        </script></li>
+                            document.addEventListener("DOMContentLoaded", function () {
+                                // Get the username from the URL
+                                const queryString = window.location.search;
+                                const urlParams = new URLSearchParams(queryString);
+                                const username = urlParams.get('username');
+
+                                // Construct the To-Do List link with the username
+                                const todoLink = document.getElementById('todoLink');
+                                if (username) {
+                                    todoLink.href = `./todolog.html?username=${username}`;
+                                } else {
+                                    // Handle the case where the username is not provided in the URL
+                                    todoLink.href = './todolog.html'; // Or set it to a default value
+                                }
+                            });
+                        </script>
+                    </li>
+                    <div class="dropdown">
+                        <button class="dropbtn">Quiz <i class="bi bi-caret-down"></i></button>
+                        <div class="dropdown-content">
+                            <a href="./frontend/frontend.html">Frontend</a>
+                            <a href="./backend/backend.html">Backend</a>
+                            <a href="./devops/devops.html">DevOps</a>
+                        </div>
+                    </div>
                     <li><a href="./about.html">About Us</a></li>
                     <li><a href="./contact.html">Contact us</a></li>
                 </ul>
-                <div class="search">
+                <!-- <div class="search">
                     <i class="bi bi-search"></i>
                     <input type="text" placeholder="Search Projects">
-                </div>
+                </div> -->
                 <a class="button-63" href="./login.html" role="button">Log In</a>
 
             </nav>
